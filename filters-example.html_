@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" context="text/html; charset=UTF-8" />
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="js/lib/angular.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Filters</h1>
+            <p> Filtro de texto: {{ 'Es_UN_TextO' }} </p>
+            <p> Filtro de texto: {{ 'Es_UN_TextO' | uppercase }} </p>
+            <p> Filtro de texto: {{ 'Es_UN_TextO' | lowercase }} </p>
+
+            <p> Filtro de moneda: {{ 1350 }} </p>
+            <p> Filtro de moneda: {{ 1350 | currency }} </p>
+            <p> Filtro de moneda: {{ 1350 | currency:'&' }} </p>
+
+            <p> Filtro de número: {{ 135000000 }} </p>
+            <p> Filtro de número: {{ 135000000 | number }} </p>
+        </div>
+    </body>
+</html>
