@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html ng-app="universidadApp">
+    <head>
+        <meta http-equiv="Content-Type" context="text/html; charset=UTF-8" />
+        <link href="./../../css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="./../../js/lib/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <style>
+         .puntero {
+             cursor: pointer;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="container" ng-controller="listadoCtrl as profe">
+          <h1>ng-repeat</h1>
+          <h4>Manejando repeticiones</h4>
+          <hr/>
+
+          <ul>
+            <li ng-repeat="nombre in listadoDeNombres">{{ nombre }}</li>
+          </ul>
+
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Nombre</th>
+                      <th>Edad</th>
+                      <th>Materia</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="profesor in listadoProfesores">
+                    <td>{{ profesor.nombre }}</td>
+                    <td>{{ profesor.edad }}</td>
+                    <td>{{ profesor.materia }}</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <ul>
+            <li ng-repeat="number in [1,2,3,4,5,6,7,8,9,10]">
+              2 x {{ number }} = {{ number * 2 }}
+            </li>
+          </ul>
+
+          {{ listadoDeNombres | json }}
+          <br/>
+
+          <div class="row">
+              Búsqueda:
+              <br/>
+              <input name="" type="text" value="" ng-model="busqueda.nombre" class="form-control" placeholder="Ingrese lo que desea buscar" />
+              <br/>
+              Sexo:
+              <select id="" name="" class="form-control" ng-model="busqueda.sexo">
+                  <option value="">Cualquiera</option>
+                  <option value="hombre">Hombre</option>
+                  <option value="mujer">Mujer</option>
+              </select>
+          </div>
+
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th>Avatar</th>
+                      <th> <a class="puntero" ng-click="columna = 'nombre'; reverse = !reverse;">Nombre</a></th>
+                      <th>Edad</th>
+                      <th><a class="puntero" ng-click="columna = 'sexo'; reverse = !reverse;">Sexo</a></th>
+                      <th>Teléfono</th>
+                      <th>Celular</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="persona in listadoPersonas | filter:busqueda | orderBy:columna:reverse">
+                      <td>
+                          <img class="rounded-circle" height="50px" width="50px" alt="" ng-src="{{ persona.picture }}"/>
+                      </td>
+                      <td>{{ persona.nombre }}</td>
+                      <td>{{ persona.edad }}</td>
+                      <td>{{ persona.sexo }}</td>
+                      <td>{{ persona.telefono }}</td>
+                      <td>{{ persona.celular }}</td>
+                  </tr>
+              </tbody>
+          </table>
+        </div>
+    </body>
+</html>
