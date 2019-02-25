@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta http-equiv="Content-Type" context="text/html; charset=UTF-8" />
+        <link href="./../../css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="./../../js/lib/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <title>http-request</title>
+    </head>
+    <body>
+        <div class="container" ng-controller="mainCtrl">
+          <h1>$http request</h1>
+          <h4>Data dinámica</h4>
+          <hr/>
+
+          <table class="table table-striped">
+              <tr>
+                  <td>Nombre</td>
+                  <td>Sexo</td>
+              </tr>
+              <tr ng-repeat="profe in profesores">
+                <td>{{ profe.nombre }}</td>
+                <td>{{ profe.sexo }}</td>
+              </tr>
+          </table>
+  {{ profesores }}
+        </div>
+    </body>
+</html>

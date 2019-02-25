@@ -1,0 +1,24 @@
+<h1>Characters</h1>
+
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="character in characters | limitTo:position | limitTo:-5">
+              <td>{{ $index + 1 }}</td>
+              <td>{{ character.id | id }}</td>
+              <td>{{ character.name }}</td>
+              <td>{{ character.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" ng-click="ateriores()">Anteriores</button>
+    <button type="button" class="btn btn-primary" ng-click="siguientes()">Siguientes</button>
+</div>
