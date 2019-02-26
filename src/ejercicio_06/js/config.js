@@ -13,9 +13,9 @@ app.config(function($routeProvider){
       templateUrl: 'partials/characters.html',
       controller: 'charactersCtrl'
     })
-    .when('/character', {
+    .when('/character/:id', {
       templateUrl: 'partials/character.html',
-      // controller: 'charactersCtrl'
+      controller: 'characterCtrl'
     })
     .otherwise({
       redirectTo: '/'

@@ -8,14 +8,16 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Ver</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="character in characters | limitTo:position | limitTo:-5">
-              <td>{{ $index + 1 }}</td>
+              <td>{{ characters.indexOf(character) + 1 }}</td>
               <td>{{ character.id | id }}</td>
               <td>{{ character.name }}</td>
               <td>{{ character.description }}</td>
+              <td><a href="#/character/{{ character.id }}">Detail</a></td>
             </tr>
         </tbody>
     </table>
